@@ -10,8 +10,8 @@ const ChatList: FC = () => {
 				<div className=" text-center border-t flex-1 border-light-gray-700  "></div>
 			</div>
 
-			<SingleChat sender />
 			<SingleChat sender={false} />
+			<SingleChat sender />
 			<SingleChat sender />
 			<SingleChat sender={false} />
 			<SingleChat sender />

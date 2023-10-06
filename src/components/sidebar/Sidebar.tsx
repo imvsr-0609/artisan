@@ -4,7 +4,11 @@ import DummyUser from '../../assets/dummy-user.svg';
 import { TriangleDownIcon } from '@radix-ui/react-icons';
 import { navigationTabs } from '../../helpers/constants/navigationConstant';
 
-const Sidebar: FC = () => {
+type SidebarProps = {
+	user: any;
+};
+
+const Sidebar: FC<SidebarProps> = ({ user }) => {
 	return (
 		<div className="flex flex-col gap-5 items-center min-w-[260px] bg-light-purple-300 text-white  pt-6 pb-12 px-4 ">
 			<img className="w-[140px] object-contain " src={ArtisanIcon} alt="" />
