@@ -5,10 +5,16 @@ import UserProvider, {
 } from './context/UserContext';
 import AppLayout from './layout/AppLayout';
 import AuthPage from './pages/auth/AuthPage';
+import { ThemeContext } from './context/ThemeContext';
 
 function App() {
 	const { user } = useContext(UserContext) as UserContextType;
-	return <>{user?.email ? <AppLayout /> : <AuthPage />}</>;
+	const { appThemeLight } = useContext(ThemeContext);
+	return (
+		<div className={!appThemeLight && 'dark'}>
+			{user?.email ? <AppLayout /> : <AuthPage />}
+		</div>
+	);
 }
 
 export default App;

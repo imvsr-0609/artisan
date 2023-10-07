@@ -49,7 +49,7 @@ const ChatActionForm: FC = () => {
 		setMessage('');
 	};
 	return (
-		<div className="self-end px-12 py-[18px] w-full  bg-light-purple-200 bg-opacity-20 backdrop backdrop-blur-sm  flex flex-col gap-4">
+		<div className="self-end px-12 py-[18px] w-full  bg-light-purple-200 dark:bg-transparent dark:bg-gradient-to-br from-light-blue-800/60 to-light-blue-800/20 bg-opacity-20 backdrop backdrop-blur-md  flex flex-col gap-4">
 			<div className="flex items-center gap-4 ">
 				<p className="font-medium text-light-gray-700 text-sm">
 					Suggested Prompts:
@@ -65,9 +65,9 @@ const ChatActionForm: FC = () => {
 							setMessage(message + prompt);
 							inputRef.current.focus();
 						}}
-						className="p-3 px-6 border border-light-purple-300 rounded-lg bg-light-gray-300 shadow-inner-light cursor-pointer "
+						className="p-3 px-6 border border-light-purple-300 rounded-lg bg-light-gray-300 dark:bg-light-purple-800 shadow-inner-light cursor-pointer "
 					>
-						<p className="font-semibold text-xs text-light-blue-800">
+						<p className="font-semibold text-xs text-light-blue-800 dark:text-light-gray-300 ">
 							{prompt}
 						</p>
 					</div>
@@ -80,7 +80,7 @@ const ChatActionForm: FC = () => {
 				>
 					<div
 						onClick={() => setShowKeyboard(true)}
-						className="w-10 h-10 rounded-full grid place-items-center border border-light-purple-300 text-light-blue-800 bg-light-gray-300 shadow-inner-light cursor-pointer "
+						className="w-10 h-10 rounded-full grid place-items-center border border-light-purple-300 dark:bg-light-purple-800 text-light-blue-800 dark:text-light-gray-300 bg-light-gray-300 shadow-inner-light cursor-pointer "
 					>
 						<FaceIcon />
 					</div>
@@ -96,18 +96,18 @@ const ChatActionForm: FC = () => {
 						onChange={(e) => setMessage(e.target.value)}
 						type="text"
 						placeholder="Type here.."
-						className=" outline-none font-rubik text-base leading-[18px] placeholder:text-light-gray-700 text-light-blue-800 px-6 py-[18px] border border-light-purple-200 rounded-lg w-full flex-1  "
+						className=" outline-none font-rubik text-base leading-[18px] placeholder:text-light-gray-700 text-light-blue-800 dark:text-light-gray-300 dark:bg-light-purple-1000 px-6 py-[18px] border border-light-purple-200 rounded-lg w-full flex-1  "
 					/>
 
 					<button
 						type="submit"
-						className="w-10 h-10 rounded-full grid place-items-center border border-light-purple-300 text-light-blue-800 bg-light-gray-300 shadow-inner-light "
+						className="w-10 h-10 rounded-full grid place-items-center border border-light-purple-300 dark:bg-light-purple-800 text-light-blue-800 dark:text-light-gray-300 bg-light-gray-300 shadow-inner-light "
 					>
 						<PaperPlaneIcon />
 					</button>
 				</form>
 
-				<div className="p-3 px-5 border border-light-purple-300 text-light-blue-800 rounded-lg bg-light-gray-300 shadow-inner-light cursor-pointer flex items-center gap-2  min-w-max ">
+				<div className="p-3 px-5 border border-light-purple-300 text-light-blue-800 rounded-lg bg-light-gray-300 dark:bg-light-purple-800 dark:text-light-gray-300 shadow-inner-light cursor-pointer flex items-center gap-2  min-w-max ">
 					<UploadIcon />
 					<p className="font-semibold text-sm ">Upload Files</p>
 				</div>

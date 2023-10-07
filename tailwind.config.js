@@ -2,7 +2,7 @@
 module.exports = {
 	content: ['./src/**/*.{html,ts,js,jsx,tsx}'],
 	presets: [],
-	darkMode: 'media', // or 'class'
+	darkMode: 'class',
 	theme: {
 		accentColor: ({ theme }) => ({
 			...theme('colors'),
@@ -56,6 +56,7 @@ module.exports = {
 			'gradient-to-tl':
 				'linear-gradient(to top left, var(--tw-gradient-stops))',
 			'light-pattern': 'url(./assets/bg-image/artisan-bg.avif)',
+			'dark-pattern': 'url(./assets/bg-image/artisan-bg-dark.jpg)',
 		},
 		backgroundOpacity: ({ theme }) => theme('opacity'),
 		backgroundPosition: {
@@ -171,7 +172,12 @@ module.exports = {
 					150: '#BCBBFF',
 					200: '#9F85FF',
 					300: '#7D37FF',
+					350: '#6948E5',
 					400: '#6100FF',
+					700: '#262659',
+					800: '#1C1C41',
+					900: '#202039',
+					1000: '#1A112A',
 				},
 				gray: {
 					300: '#F9F9F9',
@@ -180,6 +186,7 @@ module.exports = {
 				blue: {
 					500: '#377BF9',
 					800: '#220964',
+					900: '#130143',
 				},
 			},
 		}),

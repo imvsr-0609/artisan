@@ -72,10 +72,10 @@ const SingleChat: FC<SingleChatProps> = ({ chat, id }) => {
 			/>
 			<div className={`flex flex-col gap-4 ${sender && 'items-end'} `}>
 				<div className="flex items-center text-base gap-4 ">
-					<p className="text-light-blue-800 font-bold ">
+					<p className="text-light-blue-800 dark:text-light-purple-200 font-bold ">
 						{user.split(' ')[0]} {sender && '(You)'}{' '}
 					</p>
-					<DotFilledIcon />
+					<DotFilledIcon className="dark:text-light-purple-350" />
 					<p className="text-light-gray-700 font-medium ">
 						{dayjs(time).format('LT') ?? '--:--'}
 					</p>
@@ -86,11 +86,11 @@ const SingleChat: FC<SingleChatProps> = ({ chat, id }) => {
 					<div
 						className={`p-4  rounded-2xl shadow-md ${
 							sender
-								? 'bg-light-gray-300 rounded-tr-none'
-								: 'bg-light-purple-100 rounded-tl-none'
+								? 'bg-light-gray-300 dark:bg-light-purple-900 rounded-tr-none'
+								: 'bg-light-purple-100 dark:bg-light-purple-700 rounded-tl-none'
 						} `}
 					>
-						<p className="text-light-blue-800 text-base font-normal leading-6">
+						<p className="text-light-blue-800 dark:text-light-gray-300 text-base font-normal leading-6">
 							{message}
 						</p>
 					</div>
