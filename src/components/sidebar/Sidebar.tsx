@@ -32,8 +32,35 @@ const Sidebar: FC<SidebarProps> = ({ user }) => {
 	}, [menuRef]);
 
 	return (
-		<div className="flex flex-col gap-5 items-center min-w-[260px] bg-light-purple-300 dark:bg-light-blue-900 text-white  pt-6 pb-12 px-4 ">
-			<img className="w-[140px] object-contain " src={ArtisanIcon} alt="" />
+		<div className="flex flex-col gap-6 items-center min-w-[260px] bg-light-purple-300 dark:bg-light-blue-900 text-white  py-6 px-4 ">
+			<div className="flex flex-col gap-4 justify-between items-center">
+				<img className="w-16 object-contain " src={ArtisanIcon} alt="" />
+
+				<div className=" flex gap-4 items-center justify-center w-full ">
+					<h4
+						className={`font-medium text-xs leading-5 ${
+							!appThemeLight && 'opacity-50'
+						} `}
+					>
+						Light
+					</h4>
+					<div
+						onClick={toggleTheme}
+						className={`w-10 h-6 rounded-full bg-light-purple-150 dark:bg-light-purple-350 p-1 cursor-pointer flex ${
+							appThemeLight ? 'justify-start' : 'justify-end'
+						} `}
+					>
+						<div className="w-4 h-4 rounded-full bg-white shadow-lg transition-all duration-200 ease-in-out "></div>
+					</div>
+					<h4
+						className={`font-medium text-xs leading-5 ${
+							appThemeLight && 'opacity-50'
+						} `}
+					>
+						Dark
+					</h4>
+				</div>
+			</div>
 
 			<div className="p-3 px-4 flex items-center gap-3 bg-light-purple-200 dark:bg-transparent dark:bg-gradient-to-r from-light-blue-800  to-light-purple-300/20 rounded-lg border border-light-purple-300 relative">
 				<div className="flex gap-2 items-center ">
@@ -70,7 +97,7 @@ const Sidebar: FC<SidebarProps> = ({ user }) => {
 
 			<div className="w-52 border-b border-light-gray-300 border-opacity-50 -mt-1 "></div>
 
-			<div className="flex flex-col gap-8 pl-4 mt-5 overflow-y-scroll scrollbar-hidden">
+			<div className="flex flex-col gap-5 pl-2 overflow-y-scroll scrollbar-hidden">
 				{navigationTabs.map((nav, idx) => {
 					const isActive = activetab === nav.id;
 					return (
@@ -80,11 +107,11 @@ const Sidebar: FC<SidebarProps> = ({ user }) => {
 							className="flex items-center gap-4 cursor-pointer relative "
 						>
 							<img
-								className="w-6 h-6 object-contain"
+								className="w-5 h-5 object-contain"
 								src={nav.icon}
 								alt={nav.title}
 							/>
-							<h4 className="font-medium text-base leading-5 ">{nav.title}</h4>
+							<h4 className="font-medium text-sm leading-5 ">{nav.title}</h4>
 							{isActive && (
 								<img
 									src={appThemeLight ? activeNavLight : activeNav}
@@ -95,31 +122,6 @@ const Sidebar: FC<SidebarProps> = ({ user }) => {
 						</div>
 					);
 				})}
-			</div>
-
-			<div className="mt-14 flex gap-4 items-center justify-center w-full ">
-				<h4
-					className={`font-medium text-base leading-5 ${
-						!appThemeLight && 'opacity-50'
-					} `}
-				>
-					Light
-				</h4>
-				<div
-					onClick={toggleTheme}
-					className={`w-18 h-8 rounded-full bg-light-purple-150 dark:bg-light-purple-350 p-1 cursor-pointer flex ${
-						appThemeLight ? 'justify-start' : 'justify-end'
-					} `}
-				>
-					<div className="w-6 h-6 rounded-full bg-white shadow-lg transition-all duration-200 ease-in-out "></div>
-				</div>
-				<h4
-					className={`font-medium text-base leading-5 ${
-						appThemeLight && 'opacity-50'
-					} `}
-				>
-					Dark
-				</h4>
 			</div>
 		</div>
 	);

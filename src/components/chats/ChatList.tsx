@@ -14,8 +14,6 @@ const ChatList: FC = () => {
 		},
 	);
 	useEffect(() => {
-		// window.scrollTo(0, 0);
-
 		chatRef?.current?.scrollIntoView({
 			behavior: 'smooth',
 			block: 'start',

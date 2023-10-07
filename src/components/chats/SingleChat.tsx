@@ -62,7 +62,7 @@ const SingleChat: FC<SingleChatProps> = ({ chat, id }) => {
 		}
 	};
 
-	const time = new Date(timestamp?.seconds * 1000 + 19800000);
+	const time = new Date(timestamp?.seconds * 1000);
 	return (
 		<div className={`flex ${sender ? 'flex-row-reverse' : 'flex-row'} gap-4`}>
 			<img
@@ -76,7 +76,7 @@ const SingleChat: FC<SingleChatProps> = ({ chat, id }) => {
 						{user.split(' ')[0]} {sender && '(You)'}{' '}
 					</p>
 					<DotFilledIcon className="dark:text-light-purple-350" />
-					<p className="text-light-gray-700 font-medium ">
+					<p className="text-light-gray-700 font-medium text-sm ">
 						{dayjs(time).format('LT') ?? '--:--'}
 					</p>
 				</div>
