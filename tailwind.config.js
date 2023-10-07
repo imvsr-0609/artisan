@@ -55,6 +55,7 @@ module.exports = {
 			'gradient-to-l': 'linear-gradient(to left, var(--tw-gradient-stops))',
 			'gradient-to-tl':
 				'linear-gradient(to top left, var(--tw-gradient-stops))',
+			'light-pattern': 'url(./assets/bg-image/artisan-bg.avif)',
 		},
 		backgroundOpacity: ({ theme }) => theme('opacity'),
 		backgroundPosition: {
@@ -177,6 +178,7 @@ module.exports = {
 					700: '#928CA7',
 				},
 				blue: {
+					500: '#377BF9',
 					800: '#220964',
 				},
 			},

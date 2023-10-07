@@ -11,15 +11,17 @@ interface Props {
 
 export const ThemeContext = createContext<ThemeContextType | null>(null);
 
+const getTheme = () => {
+	const darkMode = localStorage.getItem('dark_mode');
+	if (darkMode) {
+		return !darkMode;
+	} else {
+		return false;
+	}
+};
+
 const ThemeContextProvider: FC<Props> = ({ children }) => {
-	const [appThemeLight, setAppThemeLight] = useState(() => {
-		const darkMode = localStorage.getItem('dark_mode');
-		if (darkMode === null) {
-			return;
-		} else {
-			return JSON.parse(darkMode);
-		}
-	});
+	const [appThemeLight, setAppThemeLight] = useState(getTheme() ?? true);
 
 	const toggleTheme = () => {
 		setAppThemeLight(!appThemeLight);
